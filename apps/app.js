@@ -16,15 +16,13 @@ new Vue({
             this.$http.get('http://www.omdbapi.com/?s=' + this.searchTerm + '&page='+this.currentPage+'&r=json')
                 .then(result => {
                     this.movies = result.data
-                    console.log(this.movies)
                 })
         },
         displayDetails(movieId){
             this.$http.get('http://www.omdbapi.com/?i='+movieId)
             .then(result => {
                 this.movieDetails = result.data;
-                //this.show = !this.show;
-                console.log(this.movieDetails)
+                this.show = !this.show;
             })
         }
     },

@@ -19,14 +19,14 @@
 				<img :src=movie["Poster"] v-on:click="displayDetails(movie.imdbID)" />
 			</li>
 		</ul>
-		<!-- <transition name="fade">
-			<ul v-if="show"> -->
+		<transition name="fade">
+			<ul v-if="show">
 				<li v-for="detail in movieDetails">
 					{{detail}}
 
 				</li>
-			<!-- </ul> -->
-		<!-- </transition> -->
+			</ul>
+		 </transition>
 
 
 
