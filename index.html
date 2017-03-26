@@ -13,18 +13,28 @@
 	<div id="app">
 		<input type="text" id="search-term" v-model="searchTerm">
 
-		<ul>
+		<ul class="display-inline">
 			<li v-for="movie in movies.Search">
 				<p>{{movie.Title}}</p>
-				<img :src=movie["Poster"] />
+				<img :src=movie["Poster"] v-on:click="displayDetails(movie.imdbID)" />
 			</li>
 		</ul>
+		<!-- <transition name="fade">
+			<ul v-if="show"> -->
+				<li v-for="detail in movieDetails">
+					{{detail}}
+
+				</li>
+			<!-- </ul> -->
+		<!-- </transition> -->
 
 
-	<ul class="pager" class="carousel-inner">
-		<li><a href="#" id="previous-button" v-on:click="currentPage -= 1">Previous</a></li>
-		<li><a href="#" id="next-button" v-on:click="currentPage += 1">Next</a></li>
-	</ul>
+
+
+		<ul class="pager">
+			<li><a href="#" id="previous-button" v-on:click="currentPage -= 1">Previous</a></li>
+			<li><a href="#" id="next-button" v-on:click="currentPage += 1">Next</a></li>
+		</ul>
 	</div>
 
 	<!-- Scripts -->
