@@ -1,8 +1,3 @@
-.centered {
-    margin: auto;
-    width: 50%;
-}
-
 .fade-enter-active, .fade-leave-active {
     transition: opacity .5s
 }
@@ -14,4 +9,7 @@
 }
 .display-inline{
     display: inline-flex;
+}
+.centered{
+    text-align: center;
 }

@@ -14,16 +14,15 @@
 		<input type="text" id="search-term" v-model="searchTerm">
 
 		<ul class="display-inline">
-			<li v-for="movie in movies.Search">
-				<p>{{movie.Title}}</p>
+			<ul v-for="movie in movies.Search">
+				<p class="centered">{{movie.Title}}</p>
 				<img :src=movie["Poster"] v-on:click="displayDetails(movie.imdbID)" />
-			</li>
+			</ul>
 		</ul>
 		<transition name="fade">
 			<ul v-if="show">
-				<li v-for="detail in movieDetails">
-					{{detail}}
-
+				<li v-for="(value, key) in movieDetails">
+					 {{ key }} : {{ value }}
 				</li>
 			</ul>
 		 </transition>

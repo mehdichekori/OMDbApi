@@ -4,7 +4,7 @@ new Vue({
         searchTerm: "",
         movies: [],
         currentPage: 1,
-        show: false,
+        show: true,
         movieDetails: []
     },
     created() {
@@ -22,7 +22,7 @@ new Vue({
             this.$http.get('http://www.omdbapi.com/?i='+movieId)
             .then(result => {
                 this.movieDetails = result.data;
-                this.show = !this.show;
+                // this.show = !this.show;
             })
         }
     },
