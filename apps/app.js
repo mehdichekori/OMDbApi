@@ -4,11 +4,9 @@ new Vue({
         searchTerm: "",
         movies: [],
         currentPage: 1,
-        show: true,
-        movieDetails: []
-    },
-    created() {
-        //this.fetchData()
+        show: false,
+        movieDetails: [],
+        lastClickedMovieId: null
     },
     methods: {
         fetchData() {
@@ -22,8 +20,16 @@ new Vue({
             this.$http.get('http://www.omdbapi.com/?i='+movieId)
             .then(result => {
                 this.movieDetails = result.data;
-                // this.show = !this.show;
+                this.verifyIfDetailsAreShown(movieId);
             })
+        },
+        verifyIfDetailsAreShown(movieId){
+            if (movieId !== this.lastClickedMovieId || this.show == false) {
+                this.lastClickedMovieId = movieId;
+                this.show = true;
+            }else{
+                this.show = false;
+            }
         }
     },
     watch: {
@@ -31,6 +37,7 @@ new Vue({
             if (val !== oldVal) {
                 console.log("searchTerm went from "+oldVal+" to "+val)
                 this.fetchData()
+                this.show = false;
             }
         },
         currentPage: function(val, oldVal){
@@ -42,11 +49,6 @@ new Vue({
                 this.fetchData()
             }
         },
-        // movieDetails: function(val,oldVal){
-        //     if (val !== oldVal) {
-        //         console.log(val);
-        //     }
-        // },
         show: function(val,oldVal){
             if (val !== oldVal) {
                 console.log("show = "+val);
