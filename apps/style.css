@@ -13,3 +13,11 @@
 .centered{
     text-align: center;
 }
+.middleOfScreen{
+    position:fixed;
+    left:35%;
+    right:45%;
+}
+.overflow-control{
+    overflow-x: auto;
+}
