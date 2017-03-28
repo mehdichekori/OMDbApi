@@ -17,6 +17,12 @@
 .top-banner{
     margin-top: 20px;
 }
+.FixedSize{
+    height: 450px;
+    max-height: 450px;
+    width: 300px;
+    max-width: 300px;
+}
 body{
     padding-top: 5px;
 }

@@ -35,8 +35,8 @@
 				<span v-if="!movies.Search"></span>
 				<ul v-for="movie in movies.Search" v-else>
 					<p class="centered" v-on:click="displayDetails(movie.imdbID)">{{movie.Title}}</p>
-					<img v-if="movie['Poster']!=='N/A'" :src=movie["Poster"] v-on:click="displayDetails(movie.imdbID)" />
-					<img v-else src="styles/no-thumbnail.png" v-on:click="displayDetails(movie.imdbID)" />
+					<img v-if="movie['Poster']!=='N/A'" :src=movie["Poster"] v-on:click="displayDetails(movie.imdbID)" class="FixedSize"/>
+					<img v-else src="styles/no-thumbnail.png" v-on:click="displayDetails(movie.imdbID)"/>
 				</ul>
 			</ul>
 		</div>
