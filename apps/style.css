@@ -1,7 +1,6 @@
 .fade-enter-active, .fade-leave-active {
     transition: opacity .5s
 }
-
 .fade-enter, .fade-leave-to
 /* .fade-leave-active in <2.1.8 */
 {
@@ -13,11 +12,18 @@
 .centered{
     text-align: center;
 }
-.middleOfScreen{
-    position:fixed;
-    left:35%;
-    right:45%;
-}
 .overflow-control{
     overflow-x: auto;
+}
+body{
+    padding-top: 5px;
+}
+i
+/* this is needed to make the gliphicon cenetered in the input */
+{
+    display:block;
+    text-align:center
+}
+.top-banner{
+    margin-top: 22px;
 }

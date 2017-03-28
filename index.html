@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title></title>
+	<title>Mehdi Chekori</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="apps/style.css" />
@@ -11,28 +11,25 @@
 <body>
 
 	<div id="app">
-		<div class="container">
 
+		<!-- Search bar -->
+		<div class="container top-banner">
 			<div class="row">
-				<div class="col">
+				<div class="col-md-4">
 				</div>
-
-				<form class="form-inline">
-				<div class="col">
-					<label for="search-term">Search for IMDB movies</label>
-					<input type="text" id="search-term" v-model="searchTerm" class="form-control">
-					</br>
+				<div class="col-md-4">
+					<div class="form-group has-feedback">
+						<input type="text" id="search-term" v-model="searchTerm" class="form-control" placeholder="Find movie"/>
+						<i class="glyphicon glyphicon-search form-control-feedback"></i>
+					</div>
 				</div>
-				</form>
-
-				<div class="col">
+				<div class="col-md-4">
 				</div>
-
 			</div>
+			</br>
 		</div>
 
-
-
+		<!-- Movies Titles and posters -->
 		<div class="overflow-control">
 			<ul class="display-inline">
 				<ul v-for="movie in movies.Search">
@@ -40,16 +37,16 @@
 					<img :src=movie["Poster"] v-on:click="displayDetails(movie.imdbID)" />
 				</ul>
 			</ul>
-					</div>
-			<transition name="fade">
-				<ul v-if="show">
-					<li v-for="(value, key) in movieDetails">
-						 {{ key }} : {{ value }}
-					</li>
-				</ul>
-			 </transition>
+		</div>
+		<transition name="fade">
+			<ul v-if="show">
+				<li v-for="(value, key) in movieDetails">
+					{{ key }} : {{ value }}
+				</li>
+			</ul>
+		</transition>
 
-
+		<!-- Page buttons -->
 		<ul class="pager">
 			<li><a href="#" id="previous-button" v-on:click="currentPage -= 1">Previous</a></li>
 			<li><a href="#" id="next-button" v-on:click="currentPage += 1">Next</a></li>

@@ -6,7 +6,16 @@ new Vue({
         currentPage: 1,
         show: false,
         movieDetails: [],
+        displayedDetails: [],
         lastClickedMovieId: null
+    },
+    computed:{
+        moviesDetails: function(){
+            for(value in moviesDetails){
+                console.log(value);
+            }
+
+        }
     },
     methods: {
         fetchData() {
