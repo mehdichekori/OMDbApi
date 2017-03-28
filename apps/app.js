@@ -38,6 +38,7 @@ new Vue({
                 console.log("searchTerm changed from "+oldVal+" to "+val)
                 this.fetchData()
                 this.show = false;
+                this.currentPage = 1;
             }
         },
         currentPage: function(val, oldVal){

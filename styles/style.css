@@ -23,6 +23,9 @@
     width: 300px;
     max-width: 300px;
 }
+.MaxHeight{
+    height:40px;
+}
 body{
     padding-top: 5px;
 }
