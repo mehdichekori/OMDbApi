@@ -35,7 +35,7 @@ new Vue({
     watch: {
         searchTerm: function(val, oldVal){
             if (val !== oldVal) {
-                console.log("searchTerm changed from "+oldVal+" to "+val)
+                console.log("searchTerm changed from '"+oldVal+"' to '"+val+"'")
                 this.fetchData()
                 this.show = false;
                 this.currentPage = 1;
@@ -49,6 +49,7 @@ new Vue({
                 console.log("Current page changed from "+oldVal+" to "+val)
                 this.fetchData()
                 this.show = false;
+                document.getElementById("carrousel").scrollLeft = 0;
             }
         },
         show: function(val,oldVal){
