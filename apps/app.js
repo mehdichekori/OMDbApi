@@ -6,16 +6,7 @@ new Vue({
         currentPage: 1,
         show: false,
         movieDetails: [],
-        displayedDetails: [],
         lastClickedMovieId: null
-    },
-    computed:{
-        moviesDetails: function(){
-            for(value in moviesDetails){
-                console.log(value);
-            }
-
-        }
     },
     methods: {
         fetchData() {
@@ -44,7 +35,7 @@ new Vue({
     watch: {
         searchTerm: function(val, oldVal){
             if (val !== oldVal) {
-                console.log("searchTerm went from "+oldVal+" to "+val)
+                console.log("searchTerm changed from "+oldVal+" to "+val)
                 this.fetchData()
                 this.show = false;
             }
@@ -54,8 +45,9 @@ new Vue({
                 if(val == 0){
                     this.currentPage = 1;
                 }
-                console.log("Current page went from "+oldVal+" to "+val)
+                console.log("Current page changed from "+oldVal+" to "+val)
                 this.fetchData()
+                this.show = false;
             }
         },
         show: function(val,oldVal){

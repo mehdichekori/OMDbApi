@@ -5,7 +5,7 @@
 	<title>Mehdi Chekori</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="apps/style.css" />
+	<link rel="stylesheet" href="styles/style.css" />
 </head>
 
 <body>
@@ -32,17 +32,24 @@
 		<!-- Movies Titles and posters -->
 		<div class="overflow-control">
 			<ul class="display-inline">
-				<ul v-for="movie in movies.Search">
-					<p class="centered">{{movie.Title}}</p>
-					<img :src=movie["Poster"] v-on:click="displayDetails(movie.imdbID)" />
+				<span v-if="!movies.Search"></span>
+				<ul v-for="movie in movies.Search" v-else>
+					<p class="centered" v-on:click="displayDetails(movie.imdbID)">{{movie.Title}}</p>
+					<img v-if="movie['Poster']!=='N/A'" :src=movie["Poster"] v-on:click="displayDetails(movie.imdbID)" />
+					<img v-else src="styles/no-thumbnail.png" v-on:click="displayDetails(movie.imdbID)" />
 				</ul>
 			</ul>
 		</div>
+
+		<!-- Movie Details -->
 		<transition name="fade">
-			<ul v-if="show">
-				<li v-for="(value, key) in movieDetails">
-					{{ key }} : {{ value }}
-				</li>
+			<ul v-if="show" class="details">
+				<li v-if="movieDetails['Title']!=='N/A'">Title : {{movieDetails["Title"]}}</li>
+				<li v-if="movieDetails['Plot']!=='N/A'">Plot : {{movieDetails["Plot"]}}</li>
+				<li v-if="movieDetails['Genre']!=='N/A'">Genre : {{movieDetails["Genre"]}}</li>
+				<li v-if="movieDetails['Director']!=='N/A'">Director : {{movieDetails["Director"]}}</li>
+				<li v-if="movieDetails['Actors']!=='N/A'">Actors : {{movieDetails["Actors"]}}</li>
+				<li v-if="movieDetails['imdbRating']!=='N/A'">Rating : {{movieDetails["imdbRating"]}}/10 with {{movieDetails["imdbVotes"]}} votes</li>
 			</ul>
 		</transition>
 

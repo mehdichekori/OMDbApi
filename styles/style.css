@@ -1,9 +1,8 @@
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .5s
+.fade-enter-active, .fade-leave-active{
+    transition: opacity .8s
 }
-.fade-enter, .fade-leave-to
-/* .fade-leave-active in <2.1.8 */
-{
+.fade-enter, .fade-leave-to{
+    /* .fade-leave-active in <2.1.8 */
     opacity: 0
 }
 .display-inline{
@@ -15,15 +14,14 @@
 .overflow-control{
     overflow-x: auto;
 }
+.top-banner{
+    margin-top: 20px;
+}
 body{
     padding-top: 5px;
 }
-i
+i{
 /* this is needed to make the gliphicon cenetered in the input */
-{
     display:block;
     text-align:center
-}
-.top-banner{
-    margin-top: 22px;
 }
