@@ -58,7 +58,9 @@ new Vue({
             if (val !== oldVal) {
                 console.log("show = " + val);
                 if (val == true) {
-                    window.scrollTo(0,document.body.scrollHeight);
+                    setTimeout(function() {
+                        window.scrollTo(0, document.body.scrollHeight);
+                    }, 100);
                 } else {
                     window.scrollTo(0,0);
                 }
