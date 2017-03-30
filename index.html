@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>OmdbApi Fetcher By Mehdi Chekori </title>
+	<title>OmdbApi Fetcher</title>
 	<!-- CSS -->
 	<link rel="icon" href="styles/movie.ico">
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
@@ -16,14 +16,19 @@
 		<!-- Search bar -->
 		<div class="container top-banner">
 			<div class="row">
-				<div class="col-md-4"></div>
-				<div class="col-md-4">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<div class="h1 centered padded">
+				  <span class="glyphicon glyphicon-film"></span>
+				  Find a movie
+				</div>
+					<!-- <h1 class="centered padded">Find a movie</h1> -->
 					<div class="form-group has-feedback">
-						<input type="text" id="search-term" v-model="searchTerm" class="form-control" placeholder="Find movie"/>
+						<input type="text" id="search-term" v-model="searchTerm" class="form-control" placeholder="Movie title" />
 						<i class="glyphicon glyphicon-search form-control-feedback"></i>
 					</div>
 				</div>
-				<div class="col-md-4"></div>
+				<div class="col-md-2"></div>
 			</div>
 			</br>
 		</div>
@@ -34,8 +39,8 @@
 				<span v-if="!movies.Search"></span>
 				<ul v-for="movie in movies.Search" v-else>
 					<p class="centered MaxHeight" v-on:click="displayDetails(movie.imdbID)">{{movie.Title}}</p>
-					<img v-if="movie['Poster']!=='N/A'" :src=movie['Poster'] v-on:click="displayDetails(movie.imdbID)" class="FixedSize"/>
-					<img v-else src="styles/no-thumbnail.png" v-on:click="displayDetails(movie.imdbID)"/>
+					<img v-if="movie['Poster']!=='N/A'" :src=movie['Poster'] v-on:click="displayDetails(movie.imdbID)" class="FixedSize" />
+					<img v-else src="styles/no-thumbnail.png" v-on:click="displayDetails(movie.imdbID)" />
 				</ul>
 			</ul>
 		</div>
@@ -62,7 +67,7 @@
 	<!-- Scripts -->
 	<script src="node_modules/vue/dist/vue.js"></script>
 	<script src="node_modules/vue-resource/dist/vue-resource.js"></script>
-	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="apps/app.js"></script>
 </body>
 
 </html>

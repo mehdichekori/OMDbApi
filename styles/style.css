@@ -15,7 +15,7 @@
     overflow-x: auto;
 }
 .top-banner{
-    margin-top: 20px;
+    margin-top: -10px;
 }
 .FixedSize{
     height: 450px;
@@ -27,10 +27,17 @@
     height:40px;
 }
 body{
-    padding-top: 5px;
+    padding-top: -10px;
 }
 i{
 /* this is needed to make the gliphicon cenetered in the input */
     display:block;
     text-align:center
+}
+h1.padded {
+  padding-bottom: 25px;
+}
+div span{
+  color:darkgray;
+  margin: 0 0 10px 0;
 }
