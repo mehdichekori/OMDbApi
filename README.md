@@ -15,7 +15,7 @@ Search the OMDb API
 - Please use ES6, Typescript or ES5. *No CoffeeScript*.
 - You must create a SPA.
 - You can use any version of Angular, React or [Vue](https://vuejs.org/) (alternatively any framework you are most comfortable with).
-- You can include a `package.json` or other 
+- You can include a `package.json` or other
 build tools and processors (Webpack, Babel, SASS tools, etc.).
 - You can use any CSS framework or make your own styles.
 - Please provide any install or runtime instructions in the `readme.md`.
@@ -52,6 +52,7 @@ http://www.omdbapi.com/?i=tt1229238
 * Vue.js
 * Vue-resource
 * Bootstrap
+* Http-server
 * Glyphicons
 
 ## Instructions
@@ -59,12 +60,13 @@ http://www.omdbapi.com/?i=tt1229238
 git clone
 cd into the repo
 npm install
-open index.html
+npm start
 ```
 
 ## Author
 * Mehdi Chekori
 * Homepage: https://github.com/mehdichekori
 * Email: mehdichekori@gmail.com
+
 ## License
 MIT
