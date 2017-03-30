@@ -56,11 +56,12 @@ http://www.omdbapi.com/?i=tt1229238
 * Glyphicons
 
 ## Instructions
-```
-git clone
-cd into the repo
-npm install
-npm start
+```bash
+$ git clone the project
+# install the project's dependencies
+$ npm install
+# run the script to open the web page or open index.html
+$ npm start
 ```
 
 ## Author
