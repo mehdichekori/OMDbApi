@@ -10,14 +10,14 @@ new Vue({
     },
     methods: {
         fetchData() {
-            console.log('http://www.omdbapi.com/?s=' + this.searchTerm + '&page=' + this.currentPage + '&r=json')
-            this.$http.get('http://www.omdbapi.com/?s=' + this.searchTerm + '&page=' + this.currentPage + '&r=json')
+            console.log('https://www.omdbapi.com/?s=' + this.searchTerm + '&page=' + this.currentPage + '&r=json')
+            this.$http.get('https://www.omdbapi.com/?s=' + this.searchTerm + '&page=' + this.currentPage + '&r=json')
                 .then(result => {
                     this.movies = result.data
                 })
         },
         displayDetails(movieId) {
-            this.$http.get('http://www.omdbapi.com/?i=' + movieId)
+            this.$http.get('https://www.omdbapi.com/?i=' + movieId)
                 .then(result => {
                     this.movieDetails = result.data;
                     this.verifyIfDetailsAreShown(movieId);
@@ -36,9 +36,7 @@ new Vue({
         searchTerm: function(val, oldVal) {
             if (val !== oldVal) {
                 console.log("searchTerm changed from '" + oldVal + "' to '" + val + "'")
-                if (val.length > 0) {
-                    this.fetchData();
-                }
+                this.fetchData();
                 this.show = false;
                 this.currentPage = 1;
             }
