@@ -16,7 +16,7 @@ new Vue({
                 })
         },
         displayDetails(movieId) {
-            this.$http.get('https://www.omdbapi.com/?i=' + movieId)
+            this.$http.get('https://www.omdbapi.com/?i=' + movieId+'&apikey=d454a0a3')
                 .then(result => {
                     this.movieDetails = result.data;
                     this.verifyIfDetailsAreShown(movieId);
