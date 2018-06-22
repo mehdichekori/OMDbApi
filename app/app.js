@@ -10,7 +10,7 @@ new Vue({
     },
     methods: {
         fetchData() {
-            this.$http.get('https://www.omdbapi.com/?t=' + this.searchTerm + '&page=' + this.currentPage + '&r=json+&apikey=d454a0a3')
+            this.$http.get('https://www.omdbapi.com/?t=' + this.searchTerm + '&page=' + this.currentPage + '&r=json&apikey=d454a0a3')
                 .then(result => {
                     this.movies = result.data
                 })
